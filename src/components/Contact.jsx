@@ -5,6 +5,17 @@ import gsap from 'gsap';
 
 const Contact = () => {
  	useGSAP(() => {
+		const parallaxTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: '#Contact',
+            start: 'top 30%',
+            end: 'bottom 80%',
+            scrub: true,
+        },
+      })
+	  .to('#f-right-leaf', {y: 100},0)
+	  .to('#f-left-leaf', {y: 50},0)
+
 		const titleSplit = SplitText.create('#contact h2', { type: 'words' });
 		
 		const timeline = gsap.timeline({
